@@ -3,24 +3,32 @@
 import { registry } from '@web/core/registry';
 // const { Component, useState} = owl;
 // Probar
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, onWillStart } from "@odoo/owl";
+import { useService } from "@web/core/utils/hooks";
 
 export class OwlTodoList extends Component {
     static template = "todo_list_owl.TodoList";
 
     setup() {
         this.state = useState({ 
-            value: 11,
             taskList:[
-                {id:1, name:"Task 1", color:"#FF0000", completed: true},
-                {id:2, name:"Task 2", color:"#FF1100", completed: false},
-                {id:3, name:"Task 3", color:"#FF0011", completed: true}
             ]
         });
         console.log("Valor inicial:", this.state.value);
         console.log("Valor tasklist:", this.state.taskList);
         // Enlazar el contexto de onToggleCompleted
         this.onToggleCompleted = this.onToggleCompleted.bind(this);
+        this.orm = useService("orm")
+        this.model = "owl.todo.list"
+
+        onWillStart(async ()=>{
+            await this.getAllTasks()
+        })
+
+        
+    }
+    async getAllTasks(){
+        this.state.taskList = await this.orm.searchRead(this.model, [], ["name", "color", "completed"])
     }
     // Método para manejar el cambio de estado del checkbox
     onToggleCompleted(ev, taskId) {
