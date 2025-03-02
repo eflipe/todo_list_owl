@@ -22,12 +22,19 @@
         <thead>
             <tr>
                 <th scope="col">Task Description</th>
+                <th scope="col">Color</th>
                 <th scope="col">Completed</th>
                 <th scope="col"> </th>
             </tr>
         </thead>
         <tbody>
             <tr t-foreach="state.taskList" t-as="task" t-key="task.id">
+                <td>
+                    <div type="name" class="form-control form-control-name" id="exampleNameInput" t-esc="task.name" title="Taske name" t-att-class="{'text-decoration-line-through': task.completed}"/>
+                </td>
+                <td>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" t-att-value="task.color" title="Choose your color"/>
+                </td>
                 <td>
                     <div class="form-check">
                         <input 
@@ -36,15 +43,10 @@
                             value="" 
                             t-att-id="task.id" 
                             t-att-checked="task.completed" 
-                            t-on-change="(ev) => onToggleCompleted(ev, task.id)"                        />
-                        <label class="form-check-label" t-att-for="task.id" t-att-class="{'text-decoration-line-through': task.completed}">
-                            <span t-esc="task.name"/>
-                        </label>
+                            t-on-change="(ev) => onToggleCompleted(ev, task.id)"/>
+
                     </div>
-                </td>
-                <td>
-                    <input type="color" class="form-control form-control-color" id="exampleColorInput" t-att-value="task.color" title="Choose your color"/>
-                </td>
+                </td>                
                 <td>
                     <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#exampleModal" t-on-click="()=>this.editTask(task)">Edit</button> <button class="btn btn-danger" t-on-click="()=>this.deleteTask(task)">Delete</button>
                 </td>
