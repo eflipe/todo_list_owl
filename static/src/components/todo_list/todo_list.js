@@ -73,6 +73,15 @@ export class OwlTodoList extends Component {
         this.state.taskList = await this.orm.searchRead(this.model, [['name','ilike',text]], ["name", "color", "completed"])
     }
 
+    async updateCompleted(e, task){
+        await this.orm.write(this.model, [task.id], {completed: e.target.checked})
+        await this.getAllTasks()
+    }
+
+    async updateColor(e, task){
+        await this.orm.write(this.model, [task.id], {color: e.target.value})
+        await this.getAllTasks()
+    }
     // Método para manejar el cambio de estado del checkbox
     onToggleCompleted(ev, taskId) {
         // Buscar la tarea en taskList por su ID

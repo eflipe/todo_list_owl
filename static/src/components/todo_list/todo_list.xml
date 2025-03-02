@@ -33,7 +33,7 @@
                     <div type="name" class="form-control form-control-name" id="exampleNameInput" t-esc="task.name" title="Taske name" t-att-class="{'text-decoration-line-through': task.completed}"/>
                 </td>
                 <td>
-                    <input type="color" class="form-control form-control-color" id="exampleColorInput" t-att-value="task.color" title="Choose your color"/>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" t-on-change="(e)=>this.updateColor(e,task)" t-att-value="task.color" title="Choose your color"/>
                 </td>
                 <td>
                     <div class="form-check">
@@ -43,7 +43,9 @@
                             value="" 
                             t-att-id="task.id" 
                             t-att-checked="task.completed" 
-                            t-on-change="(ev) => onToggleCompleted(ev, task.id)"/>
+                            t-on-change="(ev) => onToggleCompleted(ev, task.id)"
+                            t-on-click="(e)=>this.updateCompleted(e,task)"                           
+                            />
 
                     </div>
                 </td>                
