@@ -11,7 +11,7 @@
             </xpath>
         </field>
     </record>
-    <!-- <record id="res_partner_kanban_view_inherit" model="ir.ui.view">
+    <record id="res_partner_kanban_view_inherit" model="ir.ui.view">
         <field name="name">res.partner.kanban.view.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>
@@ -22,7 +22,7 @@
         </field>
     </record>
 
-    <record id="res_partner_form_view_inherit" model="ir.ui.view">
+    <!-- <record id="res_partner_form_view_inherit" model="ir.ui.view">
         <field name="name">res.partner.form.view.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
