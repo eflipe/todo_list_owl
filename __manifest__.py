@@ -9,7 +9,8 @@
     'depends' : ['base', 'web'],
     'data': [
         'security/ir.model.access.csv',
-        'views/todo_list_views.xml'
+        'views/todo_list_views.xml',
+        'views/res_partner_views.xml'
     ],
     'demo': [
     ],
@@ -20,6 +21,8 @@
             'todo_list_owl/static/src/components/todo_list/todo_list.js',
             'todo_list_owl/static/src/components/todo_list/todo_list.xml',
             'todo_list_owl/static/src/components/todo_list/todo_list.scss',
+            'todo_list_owl/static/src/components/view_inheritance/res_partner_views.xml',
+            'todo_list_owl/static/src/components/view_inheritance/res_partner_list_view.js',
         ],
     },
 }
