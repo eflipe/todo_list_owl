@@ -26,6 +26,8 @@
             'todo_list_owl/static/src/components/view_inheritance/res_partner_kanban_view.js',
             'todo_list_owl/static/src/components/view_inheritance/res_partner_kanban_views.xml',
             'todo_list_owl/static/src/components/*/*.scss',
+            'todo_list_owl/static/src/components/*/*.js',
+            'todo_list_owl/static/src/components/*/*.xml',
         ],
     },
 }
