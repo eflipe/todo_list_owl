@@ -33,10 +33,10 @@
                 <field name="email" position="attributes">
                 <attribute name="widget">valid_email_2</attribute>
             </field>
-            <!-- <field name="website" position="before">
-                <field name="username" widget="username"/>
-                <field name="expected_salary" widget="range"/>
-            </field> -->
+            <field name="website" position="before">
+                <field name="username" widget="username_widget"/>
+                <!-- <field name="expected_salary" widget="range"/> -->
+            </field>
         </field>
     </record>
     
