@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="owl.RangeField" owl="1">
+        <div>
+            <label for="customRange1" class="form-label">
+            <span t-esc="state.value"/> 
+            <!-- <span t-esc="currency"/> -->
+            </label>
+            <input 
+            type="range" 
+            class="form-range" 
+            id="customRange1" 
+            min="100" 
+            max="10000" 
+            step="100" 
+            t-att-value="state.value" 
+            t-on-input="onRangeChange"
+            />
+        </div>
+    </t>
+</templates>

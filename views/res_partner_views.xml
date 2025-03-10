@@ -35,7 +35,7 @@
             </field>
             <field name="website" position="before">
                 <field name="username" widget="username_widget"/>
-                <!-- <field name="expected_salary" widget="range"/> -->
+                <field name="expected_salary" widget="range_widget_2" min="0" max="100" initialValue="50"/>
             </field>
         </field>
     </record>
