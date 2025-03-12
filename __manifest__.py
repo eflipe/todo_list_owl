@@ -6,10 +6,11 @@
     'sequence': -1,
     'description': """OWL Tutorial""",
     'category': 'OWL',
-    'depends' : ['base', 'web'],
+    'depends' : ['base', 'web', 'point_of_sale'],
     'data': [
         'security/ir.model.access.csv',
         'views/todo_list_views.xml',
+        'views/odoo_services.xml',
         'views/res_partner_views.xml'
     ],
     'demo': [
@@ -29,5 +30,12 @@
             'todo_list_owl/static/src/components/*/*.js',
             'todo_list_owl/static/src/components/*/*.xml',
         ],
+        'point_of_sale._assets_pos': [
+            'todo_list_owl/static/src/pos/**/*.js',
+            'todo_list_owl/static/src/pos/**/*.xml',
+            'todo_list_owl/static/src/pos/**/*.scss',
+            'todo_list_owl/static/src/pos/navbar.xml',
+            'todo_list_owl/static/src/pos/pos.scss',
+        ]
     },
 }

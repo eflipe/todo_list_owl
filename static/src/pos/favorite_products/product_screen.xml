@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="owl.point_of_sale.ProductWidget" t-inherit="point_of_sale.ProductsWidget" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('products-widget')]" position="inside">
+            <div class="favorite-products-container">
+                <div class="favorite-products">
+                <!-- <t t-esc="getFavProducts">
+                    </t> -->
+                <t t-foreach="getFavProducts" t-as="product" t-key="product.id">
+                        <ProductCard
+                            class="pos.productViewMode"
+                            name="product.display_name"
+                            productId="product.id"
+                            price="product.getFormattedUnitPrice()"
+                            imageUrl="pos.show_product_images and product.getImageUrl()"
+                            onClick="() =>this.pos.addProductToCurrentOrder(product)"
+                            productInfo="true"
+                            onProductInfoClick="() => this.onProductInfoClick(product)"
+                        />
+                    </t>
+                    FAV PROD
+            </div> 
+            </div>
+        </xpath>
+    </t>
+
+</templates>
